@@ -11,7 +11,7 @@ and the Flutter guide for
 [developing packages and plugins](https://flutter.dev/developing-packages).
 -->
 
-A flutter pakage based on url_launcher pakage for call,sms,email and launch url in browser or app with url parameters and launch mode as platform default or platform specific mode for web
+A flutter package based on url_launcher package for call,sms,email and launch url in browser or app with url parameters and launch mode as platform default or platform specific mode for web
 
 ## Features
 
@@ -19,7 +19,7 @@ A flutter pakage based on url_launcher pakage for call,sms,email and launch url 
 - Support Android & IOS
 
 ## Getting started
-Add pakage to your project by running follwing command in your terminal
+Add package to your project by running follwing command in your terminal
 
 ```bat
 flutter pub add easy_url_launcher
