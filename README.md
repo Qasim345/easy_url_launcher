@@ -49,6 +49,18 @@ Column(
             }
         ),
 
+        MaterialButton(
+                color: Colors.indigo,
+                textColor: Colors.white,
+                onPressed: () async {
+                  await EasyLauncher.email(
+                      email: "sarwari.developer@gmail.com",
+                      subject: "Test",
+                      body: "Hello Flutter developer");
+                },
+                child: const Text("Send an email"),
+              ),
+
     MaterialButton(
         child:Text("Call number"),
         onPressed: ()async {
