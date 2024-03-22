@@ -34,7 +34,7 @@ import 'pakage:easy_url_launcher/easy_url_launcher.dart';
 
 ```dart
 Column(
-    childerin: [
+    children: [
         TextButton(
             child: Text("Open url"),
             onPressed: ()async{
