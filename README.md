@@ -45,7 +45,7 @@ Column(
         TextButton(
             child: Text("Open url in default app"),
             onPressed: ()async{
-                EasyLauncher.url(url:"https://www.instagram.com",mode: LaunchMode.externalApplication);
+                EasyLauncher.url(url:"https://www.instagram.com",mode: Mode.externalApp);
             }
         ),
 

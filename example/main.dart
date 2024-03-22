@@ -1,6 +1,5 @@
 import 'package:easy_url_launcher/easy_url_launcher.dart';
 import 'package:flutter/material.dart';
-import 'package:url_launcher/url_launcher.dart';
 
 void main() => runApp(const MyApp());
 
@@ -78,12 +77,12 @@ class Home extends StatelessWidget {
                 child: const Text("Open url"),
               ),
               MaterialButton(
-                color: Colors.deepPurple,
+                color: Colors.pink,
                 textColor: Colors.white,
                 onPressed: () async {
                   await EasyLauncher.url(
                       url: "https://www.instagram.com/qasim.dev",
-                      mode: LaunchMode.externalApplication);
+                      mode: Mode.platformDefault);
                 },
                 child: const Text("Open url in default app"),
               ),

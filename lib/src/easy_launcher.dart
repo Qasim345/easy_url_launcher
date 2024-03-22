@@ -2,11 +2,21 @@ import 'package:url_launcher/url_launcher.dart';
 
 /// Author: [Qasim sarwari](https://github.com/Qasim345)
 /// [Easy Launcher](https://pub.dev/packages/easy_url_launcher)
-/// version: 0.0.1
+/// version: 0.0.4
 /// Year: 2024
 
 /// Easy Launcher class for easy url launcher function call and launch url in browser or app with url parameters and launch mode as platform default or platform specific mode for web
 /// Default mode is platform default
+
+/// enum for mode
+enum Mode {
+  platformDefault,
+  inAppBrowser,
+  inAppWeb,
+  externalApp,
+  appNoneBrowser
+}
+
 class EasyLauncher {
   EasyLauncher._();
 
@@ -28,8 +38,26 @@ class EasyLauncher {
 
   /// Opens a URL
   static Future<void> url(
-      {required String url,
-      LaunchMode mode = LaunchMode.platformDefault}) async {
-    await launchUrl(Uri.parse(url), mode: mode);
+      {required String url, Mode mode = Mode.platformDefault}) async {
+    switch (mode) {
+      case Mode.platformDefault:
+        await launchUrl(Uri.parse(url), mode: LaunchMode.platformDefault);
+        break;
+      case Mode.inAppBrowser:
+        await launchUrl(Uri.parse(url), mode: LaunchMode.inAppBrowserView);
+        break;
+      case Mode.inAppWeb:
+        await launchUrl(Uri.parse(url), mode: LaunchMode.inAppWebView);
+        break;
+      case Mode.externalApp:
+        await launchUrl(Uri.parse(url), mode: LaunchMode.externalApplication);
+        break;
+      case Mode.appNoneBrowser:
+        await launchUrl(Uri.parse(url),
+            mode: LaunchMode.externalNonBrowserApplication);
+        break;
+      default:
+        await launchUrl(Uri.parse(url), mode: LaunchMode.platformDefault);
+    }
   }
 }
