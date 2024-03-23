@@ -30,26 +30,38 @@ Import pakage
 import 'pakage:easy_url_launcher/easy_url_launcher.dart';
 ```
 
+# Demo
+![Easy Launcher Demo](demo.gif)
+
 ## Usage
+* You are free to use async & await in your code.
 
 ```dart
-Column(
-    children: [
-        TextButton(
-            child: Text("Open url"),
-            onPressed: ()async{
-                EasyLauncher.url(url:"https://pub.dev");
-            }
-        ),
-
-        TextButton(
-            child: Text("Open url in default app"),
-            onPressed: ()async{
-                EasyLauncher.url(url:"https://www.instagram.com",mode: Mode.externalApp);
-            }
-        ),
-
-        MaterialButton(
+    Column(
+        mainAxisAlignment: MainAxisAlignment.spaceAround,
+        children: [
+              MaterialButton(
+                color: Colors.green,
+                onPressed: () async {
+                  await EasyLauncher.call(number: "767676776");
+                },
+                child: const Text("Call to a number"),
+              ),
+              MaterialButton(
+                color: Colors.greenAccent,
+                onPressed: () async {
+                  await EasyLauncher.call(number: "*123#");
+                },
+                child: const Text("Run a ussd code"),
+              ),
+              MaterialButton(
+                color: Colors.blue,
+                onPressed: () async {
+                  await EasyLauncher.sms(number: "555", message: "Hello");
+                },
+                child: const Text("Send a sms"),
+              ),
+              MaterialButton(
                 color: Colors.indigo,
                 textColor: Colors.white,
                 onPressed: () async {
@@ -60,28 +72,24 @@ Column(
                 },
                 child: const Text("Send an email"),
               ),
-
-    MaterialButton(
-        child:Text("Call number"),
-        onPressed: ()async {
-            EasyLauncher.call(number: "0088980999");
-        }
-    ),
-
-    MaterialButton(
-        child:Text("Call USSD"),
-        onPressed: ()async {
-            EasyLauncher.call(number: "*#06#");
-        }
-    ),
-
-    MaterialButton(
-        child:Text("Send sms"),
-        onPressed: ()async {
-            EasyLauncher.sms(number: "555",message: "Hello");
-        }
-    ),
-
-    ]
-),
+              MaterialButton(
+                color: Colors.deepPurple,
+                textColor: Colors.white,
+                onPressed: () async {
+                  await EasyLauncher.url(url: "https://pub.dev");
+                },
+                child: const Text("Open url"),
+              ),
+              MaterialButton(
+                color: Colors.pink,
+                textColor: Colors.white,
+                onPressed: () async {
+                  await EasyLauncher.url(
+                      url: "https://www.instagram.com/qasim.dev",
+                      mode: Mode.platformDefault);
+                },
+                child: const Text("Open url in default app"),
+              ),
+            ],
+          ),
 ```

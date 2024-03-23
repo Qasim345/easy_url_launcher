@@ -53,7 +53,7 @@ class Home extends StatelessWidget {
               MaterialButton(
                 color: Colors.blue,
                 onPressed: () async {
-                  await EasyLauncher.sms(number: "555", message: "Hello");
+                  await EasyLauncher.sms(number: "1010", message: "Hello");
                 },
                 child: const Text("Send a sms"),
               ),
