@@ -81,7 +81,7 @@ class Home extends StatelessWidget {
                 textColor: Colors.white,
                 onPressed: () async {
                   await EasyLauncher.openMap(
-                      late: "36.7032925", long: "67.1891222");
+                      lati: "36.7032925", long: "67.1891222");
                 },
                 child: const Text("Open Google map"),
               ),
