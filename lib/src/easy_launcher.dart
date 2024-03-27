@@ -38,9 +38,9 @@ class EasyLauncher {
 
   /// Open Google map
   static Future<void> openMap(
-      {required String late, required String long}) async {
+      {required String lati, required String long}) async {
     await launchUrl(
-        Uri.parse("https://www.google.com/maps/@$late,$long,10z?entry=ttu"),
+        Uri.parse("https://www.google.com/maps/@$lati,$long,10z?entry=ttu"),
         mode: LaunchMode.inAppBrowserView);
   }
 
