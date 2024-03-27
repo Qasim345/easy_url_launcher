@@ -1,6 +1,6 @@
 name: easy_url_launcher
 description: A simple and very easy flutter package for launch url,email,call and sms in your App
-version: 0.0.5
+version: 0.0.6
 homepage: https://github.com/Qasim345/easy_url_launcher
 
 environment:

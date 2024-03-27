@@ -1,4 +1,4 @@
-## 0.0.5
+## 0.0.6
 
 * First version
 ---
@@ -10,3 +10,5 @@ LaunchMode
 ```dart
 Mode
 ```
+
+- Adding a method for open a map using Google map

@@ -77,6 +77,15 @@ class Home extends StatelessWidget {
                 child: const Text("Open url"),
               ),
               MaterialButton(
+                color: Colors.red,
+                textColor: Colors.white,
+                onPressed: () async {
+                  await EasyLauncher.openMap(
+                      late: "36.7032925", long: "67.1891222");
+                },
+                child: const Text("Open Google map"),
+              ),
+              MaterialButton(
                 color: Colors.pink,
                 textColor: Colors.white,
                 onPressed: () async {
