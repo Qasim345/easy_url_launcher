@@ -1,8 +1,8 @@
 import 'package:url_launcher/url_launcher.dart';
 
-/// Author: [Qasim sarwari](https://github.com/Qasim345)
+/// Author: [Qasim Sarwari](https://github.com/Qasim345)
 /// [Easy Launcher](https://pub.dev/packages/easy_url_launcher)
-/// version: 0.0.4
+/// version: 0.0.7
 /// Year: 2024
 
 /// Easy Launcher class for easy url launcher function call and launch url in browser or app with url parameters and launch mode as platform default or platform specific mode for web
@@ -41,7 +41,15 @@ class EasyLauncher {
       {required String lati, required String long}) async {
     await launchUrl(
         Uri.parse("https://www.google.com/maps/@$lati,$long,10z?entry=ttu"),
-        mode: LaunchMode.inAppBrowserView);
+        mode: LaunchMode.externalApplication);
+  }
+
+  /// Send message to whatsapp
+  /// Please provide a phone number with country code. Example: +93777777777
+  static Future<void> sendToWhatsApp(
+      {required String phone, String? message}) async {
+    await launchUrl(Uri.parse("https://wa.me/$phone?text=$message"),
+        mode: LaunchMode.externalApplication);
   }
 
   /// Opens a URL

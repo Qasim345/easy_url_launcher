@@ -95,6 +95,15 @@ class Home extends StatelessWidget {
                 },
                 child: const Text("Open url in default app"),
               ),
+              MaterialButton(
+                color: Colors.green[700],
+                textColor: Colors.white,
+                onPressed: () async {
+                  await EasyLauncher.sendToWhatsApp(
+                      phone: "+93700000000", message: "hi");
+                },
+                child: const Text("Send to whatsapp"),
+              ),
             ],
           ),
         ),

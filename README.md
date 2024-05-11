@@ -16,10 +16,10 @@ A flutter package based on url_launcher package for call,sms,email and launch ur
 ## Features
 
 - Very easy to use
-- Support Android & IOS
+- Support All plateforms
 
 ## Getting started
-Add package to your project by running follwing command in your terminal
+Add package to your project by running the follwing command in your terminal
 
 ```bat
 flutter pub add easy_url_launcher
@@ -98,6 +98,15 @@ import 'pakage:easy_url_launcher/easy_url_launcher.dart';
                       mode: Mode.platformDefault);
                 },
                 child: const Text("Open url in default app"),
+              ),
+               MaterialButton(
+                color: Colors.green[700],
+                textColor: Colors.white,
+                onPressed: () async {
+                  await EasyLauncher.sendToWhatsApp(
+                      phone: "+93700000000", message: "hi");
+                },
+                child: const Text("Send to whatsapp"),
               ),
             ],
           ),
